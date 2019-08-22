@@ -1,0 +1,27 @@
+.information {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 1;
+
+  @media screen and (min-width: $bp-mob-tblt) {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+  }
+  @media screen and (min-width: $bp-tblt-dsk) {
+    grid-column: 3 / span 5;
+    grid-row: 1 / span 1;
+  }
+}
+
+.information-title {
+  @include fluid-property("font-size", $font-size-min, $font-size-max);
+  color: var(--secondary-color);
+  font-weight: 400;
+  letter-spacing: -1px;
+  line-height: 1.2em;
+  margin: 0;
+}
+
+.information-accordion {
+  list-style: none;
+  padding: 0;
+}
