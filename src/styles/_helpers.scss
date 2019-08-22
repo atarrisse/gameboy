@@ -1,0 +1,98 @@
+/**
+  * Remove the units from expressions
+  * Ex: 40px => 40
+  **/
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/**
+  * Converts value to em.
+  * Ex: (base=16) 32px => 2em
+  **/
+@function em($size, $base: 16) {
+  @return $size / $base * 1em;
+}
+
+/**
+  * Converts value to rem.
+  * Ex: (base=16) 32px => 2rem
+  **/
+@function rem($size, $base: 16) {
+  @return $size / $base * 1rem;
+}
+
+/**
+  * Hides element on mobile
+  * Shows element on tablet adn desktop
+  * Ex: (base=16) 32px => 2em
+  **/
+@mixin hideOnMobile {
+  display: none;
+
+  @media screen and (min-width: $bp-mob-tblt) {
+    display: block;
+  }
+}
+
+/**
+  * Hides element on mobile and tablet
+  * Shows element on desktop
+  * Ex: (base=16) 32px => 2em
+  **/
+@mixin showOnDesktop {
+  display: none;
+
+  @media screen and (min-width: $bp-tblt-dsk) {
+    display: block;
+  }
+}
+
+/**
+  * Resets the order parameter to its initial value
+  * Used for layout on header children
+  * applicable for tablet and mobile
+  **/
+@mixin resetOrderAfterMobile {
+  @media screen and (min-width: $bp-mob-tblt) {
+    order: initial;
+  }
+}
+
+/**
+  * calculates a proprety size according to the screen contraints
+  * $property: eg 'font-size' ('height', 'width'...)
+  * $min-size: eg 12px
+  * $max-size: eg 40px
+  * $min-vw
+  * $max-vw
+  * reference: https://css-tricks.com/snippets/css/fluid-typography/
+  **/
+@mixin fluid-property(
+  $property,
+  $min-size,
+  $max-size,
+  $min-vw: 768px,
+  $max-vw: 1440px
+) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-size);
+  $u4: unit($max-size);
+
+  @if $u1 == $u2 and $u3 == $u4 {
+    & {
+      #{$property}: #{rem(strip-unit($min-size))};
+
+      @media screen and (min-width: $min-vw) {
+        #{$property}: calc(
+          #{$min-size} + #{strip-unit($max-size - $min-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        #{$property}: #{rem(strip-unit($max-size))};
+      }
+    }
+  }
+}

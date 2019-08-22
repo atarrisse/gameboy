@@ -1,0 +1,159 @@
+{
+  "themes": [
+    {
+      "name": "yellow",
+      "primaryColor": "#F8C066",
+      "secondaryColor": "#000000",
+      "secondaryColor-rgb": "0, 0, 0",
+      "terciaryColor": "rgba(110, 49, 9, 0.2)",
+      "gameboyColor": "#FFB744",
+      "borderColor": "rgba(110, 49, 9, 0.2)"
+    },
+    {
+      "name": "pink",
+      "primaryColor": "#E1517B",
+      "secondaryColor": "#FFFFFF",
+      "secondaryColor-rgb": "255, 255, 255",
+      "terciaryColor": "rgba(216, 216, 216, 0.5)",
+      "gameboyColor": "#DA265B",
+      "borderColor": "rgba(255, 255, 255, 0.5)"
+    },
+    {
+      "name": "purple",
+      "primaryColor": "#795E99",
+      "secondaryColor": "#FFFFFF",
+      "secondaryColor-rgb": "255, 255, 255",
+      "terciaryColor": "rgba(216, 216, 216, 0.5)",
+      "gameboyColor": "#6A4C8E",
+      "borderColor": "rgba(255, 255, 255, 0.5)"
+    },
+    {
+      "name": "green",
+      "primaryColor": "#CDE188",
+      "secondaryColor": "#000000",
+      "secondaryColor-rgb": "0, 0, 0",
+      "terciaryColor": "rgba(216, 216, 216, 0.5)",
+      "gameboyColor": "#ADCD39",
+      "borderColor": "rgba(110, 49, 9, 0.2)"
+    },
+    {
+      "name": "blue",
+      "primaryColor": "#76D4E1",
+      "secondaryColor": "#000000",
+      "secondaryColor-rgb": "0, 0, 0",
+      "terciaryColor": "rgba(216, 216, 216, 0.5)",
+      "gameboyColor": "#22B1C5",
+      "borderColor": "rgba(110, 49, 9, 0.2)"
+    },
+    {
+      "name": "grey",
+      "primaryColor": "#C2C3C8",
+      "secondaryColor": "#000000",
+      "secondaryColor-rgb": "0, 0, 0",
+      "terciaryColor": "rgba(216, 216, 216, 0.5)",
+      "gameboyColor": "#A8A9AD",
+      "borderColor": "rgba(0, 0, 0, 0.2)"
+    }
+  ],
+  "products": [
+    {
+      "name": "Pocket",
+      "slug": "pocket",
+      "description": "ainda menor que<br/>a versão anterior",
+      "themes": [
+        "yellow",
+        "pink",
+        "purple"
+      ],
+      "informations": [
+        {
+          "title": "Como jogar",
+          "content": [
+            "Nori grape silver beet broccoli kombu beet greens",
+            "fava bean potato quandong celery."
+          ]
+        },
+        {
+          "title": "Onde encontrar",
+          "content": [
+            "Bunya nuts black-eyed pea prairie turnip leek lentil",
+            "turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant."
+          ]
+        },
+        {
+          "title": "Mais informações",
+          "content": [
+            "Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean",
+            "Nori grape silver beet broccoli kombu beet greens"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "slug": "color",
+      "description": "um novo visor em<br/>cores para você",
+      "themes": [
+        "yellow",
+        "pink",
+        "purple",
+        "green",
+        "blue"
+      ],
+      "informations": [
+        {
+          "title": "Como jogar",
+          "content": [
+            "Nori grape silver beet broccoli kombu beet greens",
+            "fava bean potato quandong celery."
+          ]
+        },
+        {
+          "title": "Onde encontrar",
+          "content": [
+            "Bunya nuts black-eyed pea prairie turnip leek lentil",
+            "turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant."
+          ]
+        },
+        {
+          "title": "Mais informações",
+          "content": [
+            "Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean",
+            "Nori grape silver beet broccoli kombu beet greens"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Light",
+      "slug": "light",
+      "description": "em sua versão<br/>retroiluminada",
+      "themes": [
+        "grey"
+      ],
+      "informations": [
+        {
+          "title": "Como jogar",
+          "content": [
+            "Nori grape silver beet broccoli kombu beet greens",
+            "fava bean potato quandong celery."
+          ]
+        },
+        {
+          "title": "Onde encontrar",
+          "content": [
+            "Bunya nuts black-eyed pea prairie turnip leek lentil",
+            "turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant."
+          ]
+        },
+        {
+          "title": "Mais informações",
+          "content": [
+            "Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean",
+            "Nori grape silver beet broccoli kombu beet greens"
+          ]
+        }
+      ]
+    }
+  ]
+}

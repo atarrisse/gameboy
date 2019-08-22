@@ -1,0 +1,10 @@
+@each $theme in get("themes") {
+  .theme-#{map-get($theme, "name")} {
+    --primary-color: #{map-get($theme, "primaryColor")};
+    --secondary-color: #{map-get($theme, "secondaryColor")};
+    --secondary-color-rgb: #{map-get($theme, "secondaryColor-rgb")};
+    --terciary-color: #{map-get($theme, "terciaryColor")};
+    --gameboy-color: #{map-get($theme, "gameboyColor")};
+    --border-color: #{map-get($theme, "borderColor")};
+  }
+}

@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #fff;
+  --secondary-color: #000;
+  --border-color: #000;
+  --transition-transform: transform 0.3s ease-out;
+  --transition-opacity: opacity 0.3s ease-out;
+}
+
+$font-size-max: 42px;
+$font-size-min: 26px;
+$bp-mob-tblt: em(768);
+$bp-tblt-dsk: em(1440);
+$bp-tblt-mob: em(767);
+$bp-dsk-tblt: em(1439);
