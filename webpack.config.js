@@ -10,8 +10,6 @@ const pugData = require("./src/data/data");
 const isDevelopment = process.env.NODE_ENV === "development";
 
 module.exports = {
-  mode: "development",
-  watch: true,
   entry: "./src/index.js",
   devtool: "inline-source-map",
   output: {
