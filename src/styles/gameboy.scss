@@ -1,0 +1,190 @@
+.gameboy__wrapper {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+  padding: 0 25.17%;
+
+  @media screen and (min-width: $bp-mob-tblt) {
+    grid-column: 5 / span 2;
+    padding: 0;
+  }
+  @media screen and (min-width: $bp-tblt-dsk) {
+    grid-column: 10 / span 3;
+  }
+
+  --gb-body: #a8a9ad;
+  --gb-glass: #2a2a2c;
+  --gb-screen: #818286;
+  --gb-border: #6d6e72;
+  --gb-control: #1d1d1d;
+}
+
+.gameboy__proportion {
+  padding-top: 167%;
+  position: relative;
+  width: 100%;
+}
+
+.gameboy {
+  background-color: var(--gameboy-color);
+  border-radius: 1.15vw 1.15vw 4vw 1.15vw;
+  box-shadow: 0 0 20px -4px rgba(0, 0, 0, 0.5);
+  margin: auto;
+  padding: 4.3% 2.9% 4.3%;
+  position: relative;
+  width: var(--bg-width);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @media screen and (min-width: $bp-mob-tblt) {
+    margin: 0 0 0 auto;
+  }
+  @media screen and (min-width: $bp-tblt-dsk) {
+    border-radius: rem(16) rem(16) rem(57) rem(16);
+    margin-top: rem(35);
+  }
+
+  &:before {
+    background-color: var(--gb-border);
+    border-radius: 50%;
+    clip-path: polygon(0% 0%, 100% 0, 100% 33%, 0 33%);
+    content: "";
+    display: block;
+    height: rem(10);
+    left: 10%;
+    position: absolute;
+    top: 0;
+    transform: translateY(-33%);
+    width: rem(10);
+  }
+
+  &:after {
+    --bg-size: 16px;
+    --bg-position: 4px;
+    --bg-position-neg: -4px;
+    background-color: black;
+    background: radial-gradient(gray 2px, transparent 0),
+      radial-gradient(gray 2px, transparent 0),
+      radial-gradient(black 2px, transparent 0),
+      radial-gradient(black 2px, transparent 0);
+    background-position: var(--bg-position-neg) var(--bg-position-neg),
+      var(--bg-position) var(--bg-position),
+      var(--bg-position-neg) var(--bg-position),
+      var(--bg-position) var(--bg-position-neg);
+    background-size: var(--bg-size) var(--bg-size),
+      var(--bg-size) var(--bg-size), var(--bg-size) var(--bg-size),
+      var(--bg-size) var(--bg-size);
+    bottom: 4.3%;
+    clip-path: polygon(35% 0%, 100% 0, 100% 63%, 63% 100%, 0 100%, 0 35%);
+    content: "";
+    display: block;
+    height: 12.8%;
+    margin-left: auto;
+    position: absolute;
+    right: 8.46%;
+    width: 21.8%;
+  }
+}
+
+.gameboy__glass {
+  background-color: var(--gb-glass);
+  border-radius: 4.3% 4.3% 12.7% 4.3%;
+  height: 49.7%;
+  margin-bottom: 12%;
+  padding: 9.3% 15% 16%;
+  width: 100%;
+
+  &:after {
+    content: "";
+    display: block;
+    background-color: var(--gb-screen);
+    border-radius: rem(8);
+    border-radius: 4.5%;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+    .theme-grey & {
+      border: 4px solid var(--gb-border);
+    }
+  }
+
+  @media screen and (min-width: $bp-tblt-dsk) {
+    border-radius: rem(12) rem(12) rem(32) rem(12);
+  }
+}
+
+.gameboy__control {
+  align-items: center;
+  display: flex;
+  margin-bottom: 13.63%;
+}
+
+.gameboy__control-direction {
+  margin-right: auto;
+  padding-top: 29.2%;
+  position: relative;
+  width: 29.2%;
+
+  &:before,
+  &:after {
+    background-color: var(--gb-control);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &:before {
+    clip-path: inset(33% 0% 33% 0% round 3px);
+  }
+
+  &:after {
+    clip-path: inset(0% 33% 0% 33% round 3px);
+  }
+}
+
+.gameboy__control-button {
+  background-color: var(--gb-control);
+  border-radius: 50%;
+  width: 12.84%;
+
+  &:before {
+    content: "";
+    width: 1px;
+    margin-left: -1px;
+    float: left;
+    height: 0;
+    padding-top: 100%;
+  }
+
+  &--a {
+    transform: translateY(48.5%);
+  }
+  &--b {
+    margin-left: 6.4%;
+    transform: translateY(-24.25%);
+  }
+}
+
+.gameboy__pills {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.gameboy__pill {
+  background-color: var(--gb-control);
+  border-radius: rem(11);
+  padding-top: 4.31%;
+  width: 12.91%;
+
+  &:not(:last-child) {
+    margin-right: 8.7%;
+  }
+}
