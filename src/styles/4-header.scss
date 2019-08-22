@@ -1,0 +1,39 @@
+header {
+  @include fluid-property("margin-bottom", 50px, 100px);
+  @extend .grid;
+
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  grid-auto-rows: 1px;
+  margin-bottom: 7%;
+  padding: 0 rem(15);
+  position: relative;
+  width: 100vw;
+  z-index: 1;
+
+  @media screen and (max-width: $bp-tblt-mob) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0;
+  }
+  @media screen and (min-width: $bp-mob-tblt) {
+    height: rem(104);
+    padding: 0 rem(45);
+  }
+  @media screen and (min-width: $bp-tblt-dsk) {
+    border: 0;
+    padding: 0;
+    width: 100%;
+
+    &::after {
+      content: "";
+      background-color: var(--border-color);
+      display: block;
+      height: 1px;
+      transform: translateY(-1px);
+      width: 100%;
+      grid-column: 3 / span 10;
+    }
+  }
+}

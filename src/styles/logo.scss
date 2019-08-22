@@ -1,0 +1,21 @@
+.logo {
+  @include resetOrderAfterMobile;
+  grid-column: 1 / span 2;
+  margin-right: auto;
+  order: 1;
+
+  > svg {
+    @include fluid-property("width", 37px, 46px, 768px, 1440px);
+    fill: inherit;
+  }
+
+  @media screen and (max-width: $bp-tblt-mob) {
+    margin-left: rem(15);
+  }
+  @media screen and (min-width: $bp-mob-tblt) {
+    margin: 0;
+  }
+  @media screen and (min-width: $bp-mob-tblt) and (max-width: $bp-tblt-dsk) {
+    grid-column: 1 / span 1;
+  }
+}

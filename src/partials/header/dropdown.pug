@@ -1,0 +1,13 @@
+.dropdown#dropdown-gb
+  .dropdown__options
+     each product, index in htmlWebpackPlugin.options.data.products
+      label.dropdown__opt(class=`${index===0 ? 'dropdown__opt--active' : ''}` for=`gb-${product.slug}`)
+        case product.name
+          when 'Pocket'
+            include ../icons/gb-pocket
+          when 'Color'
+            include ../icons/gb-color
+          when 'Light'
+            include ../icons/gb-light
+        | #{product.name}
+        input(type="radio", value=product.slug, name="gb-type", id=`gb-${product.slug}`, aria-label=product.slug) 

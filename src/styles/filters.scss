@@ -1,0 +1,55 @@
+.filters {
+  @include resetOrderAfterMobile;
+  height: 100%;
+  order: 4;
+  width: 100%;
+
+  @media screen and (max-width: $bp-tblt-mob) {
+    height: rem(70);
+    margin-top: rem(-70);
+    transition: margin-top 0.3s ease-out;
+    z-index: -1;
+
+    &--active {
+      margin-top: 0;
+      visibility: visible;
+    }
+  }
+  @media screen and (min-width: $bp-mob-tblt) {
+    @include fluid-property("height", 70px, 104px);
+    grid-column: 5 / span 6;
+  }
+  @media screen and (min-width: $bp-mob-tblt) and (max-width: $bp-tblt-dsk) {
+    grid-column: 2 / span 4;
+    grid-row: 1 / span 1;
+    height: 100%;
+  }
+}
+
+.filters__wrapper {
+  display: flex;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  transform-origin: left;
+  visibility: hidden;
+
+  .filters--active & {
+    visibility: visible;
+  }
+
+  @media screen and (max-width: $bp-tblt-mob) {
+    border-top: 1px solid var(--border-color);
+
+    & > * {
+      flex-grow: 1;
+    }
+  }
+
+  @media screen and (min-width: $bp-mob-tblt) {
+    width: 0;
+
+    .filters--active & {
+      width: 100%;
+    }
+  }
+}

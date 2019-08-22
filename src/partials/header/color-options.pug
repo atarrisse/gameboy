@@ -1,0 +1,5 @@
+.color-opts#color-options
+  each color in htmlWebpackPlugin.options.data.themes
+    - const colorName = color.name
+    label.color-opt__label(class=`color-opt__label--${colorName}` data-color=colorName for=`color-${colorName}`)
+      input.color-opt__input(type="radio", value=colorName, name="color-option", id=`color-${colorName}`, aria-label=colorName) 

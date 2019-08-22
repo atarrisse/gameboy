@@ -1,0 +1,36 @@
+.color-opts {
+  display: flex;
+  height: 100%;
+  width: 50%;
+}
+
+.color-opt__label {
+  cursor: pointer;
+  display: inline-block;
+  height: 100%;
+  width: 20%;
+
+  @each $theme in get("themes") {
+    &--#{map-get($theme, "name")} {
+      background-color: map-get($theme, "gameboyColor");
+      border-bottom: 1px solid map-get($theme, "gameboyColor");
+      z-index: 1;
+    }
+  }
+
+  > input {
+    @extend .visuallyhidden;
+  }
+
+  @media screen and (min-width: $bp-mob-tblt) {
+    max-width: rem(42);
+  }
+
+  &--hide {
+    display: none;
+  }
+}
+
+.color-opt__input {
+  pointer-events: none;
+}
