@@ -1,0 +1,7 @@
+.article {
+  @extend .grid;
+  flex-grow: 1;
+  grid-row-gap: rem(40);
+  grid-template-rows: min-content;
+  padding-bottom: 3rem;
+}
