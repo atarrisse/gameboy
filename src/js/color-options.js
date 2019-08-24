@@ -1,11 +1,11 @@
-export default function initColors(pubsub) {
+export default function initColors(pubsub, initialTheme) {
   const main = document.getElementById("main");
   const colorsList = document.getElementById("color-options");
   const colors = [...colorsList.getElementsByClassName("color-opt__label")];
 
-  const substituteClassList = (element, newClass = "") => {
-    element.classList = "";
-    element.classList = [...newClass];
+  const applyTheme = (theme = "") => {
+    main.classList = "";
+    main.classList = `theme-${theme}`;
   };
 
   const applyColorFilter = (dropdownOptIndex = 0) => {
@@ -20,16 +20,21 @@ export default function initColors(pubsub) {
     );
   };
 
+  const initialColorConfig = initialTheme => {
+    applyColorFilter(initialTheme.gb);
+    applyTheme(window.data[initialTheme.gb].themes[initialTheme.theme]);
+  };
+
   colorsList.addEventListener("click", e => {
     e.preventDefault();
     const id = e.target.getAttribute("for");
     const input = e.target.querySelector(`#${id}`);
-    substituteClassList(main, [`theme-${input.value}`]);
+    applyTheme(input.value);
   });
 
   pubsub.subscribe("gameboy selected", ({ dropdownOptIndex = 0 }) => {
     applyColorFilter(dropdownOptIndex);
   });
 
-  applyColorFilter();
+  initialColorConfig(initialTheme);
 }

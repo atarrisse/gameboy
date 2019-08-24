@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", event => {
   const pubsub = new PubSub();
 
   initDropdown(pubsub, "dropdown-gb");
-  initColors(pubsub);
+  initColors(pubsub, { gb: 0, theme: 0 });
   initBtnFilter("btn-filter", "filters");
   initInformation(pubsub);
 });
