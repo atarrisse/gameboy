@@ -1,7 +1,7 @@
 {
-  "name": "teste",
+  "name": "Gameboy",
   "version": "1.0.0",
-  "description": "Teste para recrutamento de front-end",
+  "description": "Mock page for Gameboy Pocket, Color and Light. Design by Agnes Pinhanelli.",
   "main": "index.js",
   "author": "Ana Tarrisse",
   "license": "MIT",
