@@ -18,6 +18,7 @@ export default function initColors(pubsub, initialTheme) {
     colorsToHide.forEach(color =>
       color.classList.add("color-opt__label--hide")
     );
+    applyTheme(window.data[dropdownOptIndex].themes[0]);
   };
 
   const initialColorConfig = initialTheme => {
